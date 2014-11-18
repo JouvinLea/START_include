@@ -20,17 +20,17 @@ namespace START {
   {
     
   public :
-    CheckFit(BandsFactory &BandsFact, std::vector<Band> &BandArray, int N_iteration, Hypothesis &hypo); // use in the FCN
+    CheckFit(BandsFactory &BandsFact ,std::vector<Band> &BandArray, Hypothesis &hypo); // use in the FCN
     ~CheckFit();
-    void add_N_On();
-    inline std::vector<Band> Get_band()   const  { return fBandArray;}
+    void add_N_On(std::vector<Band> &BandArray);
+    //inline std::vector<Band> Get_band()   const  { return fBandArray;}
   
 
   private :
   
     double f_iteration;
     
-    std::vector<Band> fBandArray; ///< Band's vector
+    //std::vector<Band> fBandArray; ///< Band's vector
 
     Hypothesis *fHypothesis; ///< Hypothesis
 
