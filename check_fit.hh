@@ -7,6 +7,15 @@
 #include <map>
 #include <utility>
 
+//root
+#include "TROOT.h"
+#include "TMath.h"
+#include "TRandom.h"
+#include "TRandom3.h"
+#include "TSystem.h"
+#include "TDirectory.h"
+#include "Math/QuantFuncMathCore.h"
+#include "TUUID.h"
 
 #include "ComputeResults.hh"
 #include "Band.hh"
@@ -29,7 +38,7 @@ namespace START {
   private :
   
     double f_iteration;
-    
+    TRandom3 trandom;
     //std::vector<Band> fBandArray; ///< Band's vector
 
     Hypothesis *fHypothesis; ///< Hypothesis
