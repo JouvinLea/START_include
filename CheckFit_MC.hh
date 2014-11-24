@@ -24,26 +24,30 @@
 #include "BandsFactory.hh"
 
 namespace START {
-  
-  class CheckFit 
+  /**
+   *This class is used to remplace the ON of the Data by a poissonian distribution in each bands (zenith, offset, area and energy).
+   *The mean of the ON in each Band is obtained by calculating the mean of the signal and the mean of the background in the ON.
+   *The mean of the signal is calculated with the functionExpectedExcess of the computeResult Class in using the fittedparameters of the law used in Startfit.
+   *the mean of the background in each band is calculated by using the formula: alpha_iband * N_OFF
+   */ 
+  class CheckFit_MC 
   {
     
   public :
-    CheckFit(BandsFactory &BandsFact ,std::vector<Band> &BandArray, Hypothesis &hypo); // use in the FCN
-    ~CheckFit();
-    void add_N_On(std::vector<Band> &BandArray);
+    CheckFit_MC(BandsFactory &BandsFact ,std::vector<Band> &BandArray, Hypothesis &hypo); // use in the FCN
+    ~CheckFit_MC();
+    void N_On_MC(std::vector<Band> &BandArray);
     //inline std::vector<Band> Get_band()   const  { return fBandArray;}
   
 
   private :
   
-    double f_iteration;
+    // object TRandom 
     TRandom3 trandom;
-    //std::vector<Band> fBandArray; ///< Band's vector
 
     Hypothesis *fHypothesis; ///< Hypothesis
 
-    ComputeResults *fCompRes; ///< ComputeResult to save time !
+    ComputeResults *fCompRes; ///< ComputeResult 
 
 
   };
