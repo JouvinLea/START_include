@@ -41,7 +41,8 @@ namespace START {
   
 
   private :
-  
+    
+    std::vector<Band> fBand_realdata; 
     // object TRandom 
     TRandom3 trandom;
 
