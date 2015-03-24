@@ -155,7 +155,7 @@ namespace START {
 
     void ClearBandInfo();
     void AddInfoFromBands(const std::vector<START::Band> &VecBand, bool IsUseEthresh=false);
-    void AddInfoFromSelectedBands(const std::vector<Band> &VecBand,const std::vector<int> &BandList, bool IsUseEthresh); 
+    void AddInfoFromSelectedBands(const std::vector<Band> &VecBand,const std::vector<int> &BandList,TString configname, bool IsUseEthresh); 
     void InitEbinAlpha(double alpharun);
     void InitEbinLiveTime(double livetime);
   
