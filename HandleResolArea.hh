@@ -98,6 +98,22 @@ namespace START {
 
     void SetMcProductionName(TString mcname) {fMcProductionName=mcname;};
 
+
+    //Ces fonctions doivent etre public pour que je puisse y avoir acces des reprojband
+    // Copy Interpolators in bands   
+    int CopyInterpolatorsInBands(std::vector<Band> &InputBandArray);
+    // Copy Interpolators in bins    
+    int CopyInterpolatorsInBins(std::vector<Band> &InputBandArray);
+    // Determine value of the first MC energy bin with valid area, resol and bias
+    void SetInBandsFirstEmcBin(std::vector<Band> &InputBandArray); 
+    // Copy MC's energy threshold in bands
+    void SetInBandsMCEnergyThreshold(std::vector<Band> &InputBandArray);
+    // Set flag in bins if they are used
+    void SetInBinsKeepBin(std::vector<Band> &InputBandArray);
+    // Set effective area in bins
+    void SetInBinsEffectiveArea(std::vector<Band> &InputBandArray);
+  
+
   private :
 
     // Copy and assignement are a priori not necessary thus not allowed
@@ -146,10 +162,10 @@ namespace START {
  
     // Set flag in bins if they are used
     void SetInBinsKeepBin();
-
+    
     // Set effective area in bins
     void SetInBinsEffectiveArea();
-  
+    
     void ClearTablesVector(); // VIM : Function to clear the vector fill in readandstore
     void FillBandsWithDistributionBoolean(); // VIM : Function to say to the band vector that the distribution should be use instead of sigma and mean.
     void MakeWeightedInstrumentDistributionForBand(Band myBand,std::map<double,std::pair< std::vector<double>,std::vector<double> > > &DistributionInstrumentMapTable);  

@@ -10,6 +10,7 @@
 #include <TString.h>
 
 // START
+#include "HandleResolArea.hh"
 #include "Config.hh"
 #include "Band.hh"
 
@@ -34,7 +35,7 @@ namespace START {
     void PrintBands(const std::vector<Band> &BandArray) const;
     void PrintSummaryBand(const std::vector<Band> &BandArray) const;
     void FillBandInfo(std::vector<Band> &BandArray, std::map<TString,std::vector<int> >  &InfoReprojArray,bool LowStat,bool VeryLowStat) const;
-    void ReprojBands(std::vector<Band> &BandArray, std::map<TString, std::vector<int> >  &InfoReprojArray, std::vector<Band> &ReprojArray,TString configname);
+    void ReprojBands(std::vector<Band> &BandArray, std::map<TString, std::vector<int> >  &InfoReprojArray, std::vector<Band> &ReprojArray,TString configname, HandleResolArea &HandleIRF);
     void RebinEnergy(const std::vector<Band> &BandArray, std::vector<Band> &BandRebinArray, double sigrebin,double MinE); 
     void SetFitEnergyRangeFlagInEnergyBins(std::vector<Band> &BandArray) const;
     void CheckAndSetIfBandsAreInMCLimits(std::vector<Band> &BandArray) const;
